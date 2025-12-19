@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <link rel="stylesheet" href="/style.css">    
+    </head>
+    <body>
+        <header>    
+            <nav>
+                    <img src="/assets/logo.png" alt="logo" id="logo">
+                    <ul id="navlist">
+                        <li><a class="navlinks" href="/index.html#about">About Me</a></li>
+                        <li><a class="navlinks" href="/index.html#skills">Skills</a></li>
+                        <li><a class="navlinks" href="/index.html#projects">Projects</a></li>
+                        <li><a class="navlinks" href="/index.html#contact" id="navcontact">Contact Me</a></li>
+                    </ul>
+            </nav>
+        </header>
+
+        <section id="contact-section">
+            <h2>Contact Me</h2>
+            <div id="contactme">
+                <form action="#" id="contactform">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email"required><br><br>
+                <label for="linkedin">LinkedIn Profile:</label><br>
+                <input type="url" id="linkedin"><br><br>
+                <label for="phno">Phone Number(Optional):</label><br>
+                <input type="tel" id="phno" minlength="10" maxlength="10"><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" rows="3" required></textarea><br><br>
+                <input type="submit" id="csubmit" value="Connect">
+            </form>
+            </div>
+        </section>
+        <script src="/script.js"></script>
+    </body>
+</html>

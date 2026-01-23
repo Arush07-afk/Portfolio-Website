@@ -198,6 +198,7 @@ iframe {
     background: #5c04e9;
     padding: 20px 20px;
     margin: 0;
+    border-radius: 5px;
     flex-shrink: 0;
     width: 400px;
     height: 460px;
@@ -209,7 +210,6 @@ iframe {
     }
     100% {
         transform: translateX(-50%);
-        /* transform: translateX(calc(-300px * 3 - 40px * 3)); */
     }
 }
 .projectani{
@@ -232,6 +232,29 @@ iframe {
     color: white;
     font-size: 24px;
     margin-bottom: 10px;
+}
+
+/* Achievements */
+.achievements-container {
+    display: flex;
+    flex-direction: row;
+    height : auto;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+    gap: 20px;
+
+}
+.achievements-card {
+    background-color: #5c04e9;
+    padding: 20px;
+    margin: 20px 20px;
+    border-radius: 5px;
+    width: 400px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 18px;
+    border: 1px solid #ffffff;
 }
 
 /* Contact */

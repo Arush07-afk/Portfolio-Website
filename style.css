@@ -5,17 +5,28 @@
     align-items: center;
 }
 
+:root {
+    --primary-color: #4285f4;
+    --secondary-color: #669df6;
+    --background-color: #0d0d0d;
+    --text-color: #e8eaed;
+    --link-color: #fbbf24; /* Changed to amber/yellow */
+    --shadow-color: rgba(66, 133, 244, 0.4);
+    --secodary-black: #202124;
+}
+
+/* Body */
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #111111;
-    color:white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     overflow-x: hidden;
 }
 
 /* Header */
 header {
-    background: #111111;
-    color: white;
+    background: var(--background-color);
+    color: var(--text-color);
     padding: 1rem;
 }
 nav {
@@ -26,7 +37,7 @@ ul {
     list-style-type: none;
 }
 #photo{
-    border: 3px #5c04e9 solid;
+    border: 3px var(--primary-color) solid;
     border-radius: 50%;
     height: 220px;
     width: 200px;
@@ -55,17 +66,17 @@ nav {
 }
 #navcontact{
     margin-right: 0px;
-    background-color: #5c04e9;
+    background-color: var(--primary-color);
     padding: 20px 20px;
     border-radius: 10px;
 }
 a {
-    color: white;
+    color: var(--link-color);
     text-decoration: none;  
 }
 .navlinks {
     display: block;
-    color: white;
+    color:var(--text-color);
     text-decoration: none;            
     margin: 0 22px ;
     justify-self: right;
@@ -84,10 +95,10 @@ section {
 }
 
 h2 {
-    color: white;
+    color: var(--text-color);
     font-size: 2.5rem;
     margin-bottom: 20px;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--text-color);
     padding-bottom: 10px;
 }
 /* About Me */
@@ -110,38 +121,37 @@ h2 {
 
 /* Skills */
 #skills h2 {
-    color: white;
+    color: var(--text-color);
     margin-bottom: 50px;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--text-color);
     padding-bottom: 10px;
 }
 .skills-container {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 30px;
     padding: 20px;
 }
 .skill-card {
     background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
-    border: 2px solid #5c04e9;
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
     padding: 30px;
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
-    box-shadow: 0 15px 40px rgba(92, 4, 233, 0.4);
+    box-shadow: 0 15px 40px var(--shadow-color);
 }
 .skill-card:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 25px 50px rgba(92, 4, 233, 0.5);
+    box-shadow: 0 25px 50px var(--shadow-color);
     border: 1px solid #ffffff ;
 }
 .skill-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #5c04e9 0%, #8a2be2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -150,7 +160,7 @@ h2 {
     font-size: 2rem;
     font-weight: bold;
     color: white;
-    box-shadow: 0 5px 15px rgba(92, 4, 233, 0.3);
+    box-shadow: 0 5px 15px var(--shadow-color);
     transition: all 0.3s ease;
 }
 .skill-card:hover .skill-icon {
@@ -160,7 +170,7 @@ h2 {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: white;
+    color: var(--text-color);
 }
 .skill-level {
     font-size: 0.9rem;
@@ -170,14 +180,14 @@ h2 {
 .progress-bar-container {
     width: 100%;
     height: 8px;
-    background: #333;
+    background: var(--secodary-black);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
 }
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #5c04e9 0%, #8a2be2 50%, #5c04e9 100%);
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
     background-size: 200% 100%;
     border-radius: 10px;
     transition: width 1s ease;
@@ -185,7 +195,7 @@ h2 {
 
 /* Projects */
 .projects {
-    background: #111111;
+    background: var(--background-color);
 }
 
 iframe {
@@ -195,7 +205,7 @@ iframe {
     margin-bottom: 10px;
 }
 .project {
-    background: #5c04e9;
+    background: var(--primary-color);
     padding: 20px 20px;
     margin: 0;
     border-radius: 5px;
@@ -226,10 +236,10 @@ iframe {
 }
 
 .gr{
-    color: rgb(238, 100, 100);   
+    color: var(--link-color);   
 }
 .project h3 {
-    color: white;
+    color: var(--text-color);
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -245,16 +255,16 @@ iframe {
 
 }
 .achievements-card {
-    background-color: #5c04e9;
+    background-color: var(--primary-color);
     padding: 20px;
     margin: 20px 20px;
     border-radius: 5px;
     width: 400px;
     height: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: white;
+    color: var(--text-color);
     font-size: 18px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--primary-color);
 }
 .achievements-card h3 {
     margin-bottom: 10px;
@@ -269,20 +279,20 @@ iframe {
     margin-top: 20px;
 }
 #cform {
-    color: rgb(238, 100, 100);
+    color: var(--link-color);
     display: inline-block;
     margin-top: 10px;
     padding : 5px;
-    border: 1px white dashed;
+    border: 1px var(--text-color) dashed;
     margin-left: 10px;
     border-radius: 10px;
 }
 #contlinks{
-    color: rgb(238, 100, 100);
+    color: var(--link-color);
     text-decoration: none;
 }
 #contlinks:hover {
-    color: white;
+    color: var(--text-color);
     text-decoration: underline;
     transition: 0.3s;
 }
@@ -304,13 +314,13 @@ input, textarea {
     width: 400px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 3px solid #5c04e9;
+    border: 3px solid var(--primary-color);
     border-radius: 5px;
     font-size: 16px;
 }
 #csubmit {
-    background-color: #5c04e9;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -319,9 +329,9 @@ input, textarea {
 }
 #csubmit:hover {
     background-color: #111111;
-    color: white;
-    border: 2px solid #5c04e9;
-    box-shadow: 0 0 10px #5c04e9;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
     transition: 0.3s;
 }
 .contact-info p {
@@ -331,14 +341,14 @@ input, textarea {
 
 /* Footer */
 footer {
-    background: #111111;
-    color: white;
+    background: var(--background-color);
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
 }
 
 .fback {
     text-align: center ;
-    background: #333;;
+    background: var(--secodary-black);
     padding: 10px;
 }

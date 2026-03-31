@@ -106,6 +106,17 @@ h2 {
     width: 200px;
 }
 
+.resume{
+        background-color: var(--primary-color);
+        padding:10px;
+        border-radius: 10px;
+}
+    
+#resumeLink{
+    color: var(--text-color);
+    font-size: large;
+}
+
 .about{
     display:flex;
     justify-content: space-evenly;

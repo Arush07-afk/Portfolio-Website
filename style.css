@@ -39,7 +39,7 @@ ul {
 #photo{
     border: 4px var(--primary-color) solid;
     border-radius: 50%;
-    height: 240px;
+    height: 255px;
     width: 200px;
     box-shadow: 1px;
 }

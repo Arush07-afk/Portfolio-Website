@@ -23,20 +23,27 @@
             <h2>Contact Me</h2>
             <div id="contactme">
                 <form action="https://formspree.io/f/mlgnkeab" method="POST" id="contactform">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="linkedin">LinkedIn Profile:</label><br>
-                <input type="url" id="linkedin" name="linkedin"><br><br>
-                <label for="phno">Phone Number(Optional):</label><br>
-                <input type="tel" id="phno" name="phone" minlength="10" maxlength="10"><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="3" required></textarea><br><br>
-                <input type="submit" id="csubmit" value="Connect">
-            </form>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="linkedin">LinkedIn Profile:</label><br>
+                    <input type="url" id="linkedin" name="linkedin"><br>
+                    <label for="phno">Phone Number(Optional):</label><br>
+                    <input type="tel" id="phno" name="phone" pattern="[0-9]{10}" title="Enter a 10-digit phone number" placeholder="10 digit number, no spaces or dashes"><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="3" required></textarea><br>
+                    <input type="submit" id="csubmit" value="Connect">
+                </form>
             </div>
         </section>
+
+        <!-- Footer -->
+        <div  class="fback"><a href="#contact-section">Back to Top</a></div>
+        <footer>
+            <p> &copy; All Rights Reserved</p>
+        </footer>
+
         <script src="/script.js"></script>
     </body>
 </html>

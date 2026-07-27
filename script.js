@@ -1,3 +1,9 @@
+import { renderAchievements } from "./achievement.js";
+
+
+
+renderAchievements();
+
 const contactForm = document.getElementById('contactform');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {

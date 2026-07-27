@@ -454,6 +454,102 @@ iframe {
     text-decoration: underline;
 }
 
+/* Contact Form */
+#contact-section {
+    padding: 80px 20px;
+}
+
+#contactme {
+    max-width: 550px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    padding: 45px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+#contactform {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactform label {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#contactform label::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: inline-block;
+}
+
+#contactform input,
+#contactform textarea {
+    width: 100%;
+    background: var(--surface-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 22px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contactform textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#contactform input::placeholder,
+#contactform textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+#contactform input:focus,
+#contactform textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--glow-color);
+}
+
+#csubmit {
+    align-self: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--glow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+#csubmit:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+}
+
+#csubmit:active {
+    transform: translateY(-1px) scale(1);
+}
+
 /* Footer */
 footer {
     background: #000000;

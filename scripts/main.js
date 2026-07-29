@@ -1,8 +1,10 @@
 import { renderAchievements } from "./achievement.js";
 import { renderSkills } from "./skill.js";
-
+import { renderProjects } from "./project.js";
 
 renderSkills();
+renderProjects();
+renderProjects();
 renderAchievements();
 
 const contactForm = document.getElementById('contactform');

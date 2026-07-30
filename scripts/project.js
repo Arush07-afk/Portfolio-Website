@@ -15,7 +15,7 @@ const projects = [
     video: "amazon-clone",
     description: "An Amazon clone website made with simple HTML and CSS.",
     web: true,
-    vercel: "https://amazon-clone-orcin-mu.vercel.app/",
+    vercel: "https://amazon-clone-kohl-ten-92.vercel.app/amazon.html",
     github: "https://github.com/Arush07-afk/amazon-clone",
   },
   {
@@ -48,8 +48,8 @@ export function renderProjects() {
                     <h3>Project ${project.number}</h3>
                     <iframe src="./assets/projects/${project.video}.mp4" frameborder="0"></iframe>
                     <p>${project.description}<br> <br>
-                    Deployed Link:- <a href="${project.vercel}" class="gr">${project.name}</a> <br> <br>
-                    GitHub Repository:-<a href="${project.github}" class="gr">${project.name}</a> </p>
+                    Deployed Link:- <a href="${project.vercel}" target = "_blank" class="gr">${project.name}</a> <br> <br>
+                    GitHub Repository:-<a href="${project.github}" target = "_blank" class="gr">${project.name}</a> </p>
                 </div>
             `;
     } else {
@@ -58,7 +58,7 @@ export function renderProjects() {
                     <h3>Project ${project.number}</h3>
                     <iframe src="./assets/projects/${project.video}.mp4" frameborder="0"></iframe>
                     <p>${project.description}<br> <br>
-                    Figma Link:- <a href="${project.figma}" class="gr">${project.name}</a></p>
+                    Figma Link:- <a href="${project.figma}" target = "_blank" class="gr">${project.name}</a></p>
                 </div>
             `;
     }

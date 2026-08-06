@@ -1,6 +1,16 @@
 export const achievements = [
 
     {
+        title: "Build-A-thon",
+        description: "Certificate of Participation in Build-A-Thon.",
+        image: "BuildAThon-img"
+    },
+    {
+        title: "QuizOff 2026",
+        description: "Certificate of Participation in QuizOff 2026.",
+        image: "QuizOff-img"
+    },
+    {
         title: "Social Internship Certificate",
         description: "Certificate for completing my social internship.",
         image: "Social Internship Certificate"

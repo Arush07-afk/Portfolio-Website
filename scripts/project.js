@@ -13,7 +13,7 @@ const projects = [
     number: "Two",
     name: "Amazon Clone",
     video: "amazon-clone",
-    description: "An Amazon clone website made with simple HTML and CSS.",
+    description: "An Amazon clone website.",
     web: true,
     vercel: "https://amazon-clone-kohl-ten-92.vercel.app/amazon.html",
     github: "https://github.com/Arush07-afk/amazon-clone",

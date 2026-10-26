@@ -8,7 +8,7 @@
     --primary-color: #f43f5e; /* Vibrant Crimson/Rose */
     --secondary-color: #f59e0b; /* Golden Amber */
     --accent-color: #0ea5e9; /* Sky Blue */
-    --background-color: #0a0a0a; /* Obsidian Black */
+    --background-color: #111111; /* Near-black (Aegis style) */
     --surface-color: #171717; /* Very Dark Carbon */
     --surface-light: #262626; /* Deep Ash */
     --text-color: #fafafa; /* Pure Tint */
@@ -24,19 +24,32 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
 }
 
 /* Header & Glassmorphism */
 header {
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(17, 17, 17, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(251, 191, 36, 0.12);
     color: var(--text-color);
-    padding: 1rem 3rem;
+    padding: 0.65rem 2rem;
     position: sticky;
-    top: 0;
+    top: 16px;
+    width: min(90%, 980px);
+    margin: 16px auto 0 auto;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    border-color: rgba(251, 191, 36, 0.45);
+    box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.7), 0 0 30px rgba(251, 191, 36, 0.2);
 }
 
 nav {
@@ -52,8 +65,8 @@ ul {
 }
 
 #logo {
-    height: 60px;
-    width: 60px;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
     border: 2px solid transparent;
     background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
@@ -69,8 +82,8 @@ ul {
 .navlinks {
     color: var(--text-color);
     text-decoration: none;            
-    margin: 0 20px;
-    font-size: 1.1rem;
+    margin: 0 16px;
+    font-size: 1.05rem;
     font-weight: 400;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -81,11 +94,12 @@ ul {
 }
 
 #navcontact {
-    margin-left: 20px;
+    margin-left: 14px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    padding: 12px 24px;
+    padding: 9px 20px;
     border-radius: 30px;
     font-weight: 600;
+    font-size: 0.95rem;
     box-shadow: 0 4px 15px var(--glow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
@@ -552,28 +566,140 @@ iframe {
 
 /* Footer */
 footer {
-    background: #000000;
+    background: rgba(17, 17, 17, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 40px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(251, 191, 36, 0.12);
     color: var(--text-muted);
     text-align: center;
-    padding: 30px;
-    font-size: 1.1rem;
+    padding: 12px 32px;
+    font-size: 0.95rem;
+    width: fit-content;
+    max-width: 90%;
+    margin: 15px auto 40px auto;
+    transition: all 0.3s ease;
+}
+
+footer:hover {
+    border-color: rgba(251, 191, 36, 0.45);
+    box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(251, 191, 36, 0.18);
 }
 
 .fback {
     text-align: center;
-    background: var(--surface-color);
-    padding: 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background: transparent;
+    padding: 30px 20px 8px 20px;
+    border-top: none;
 }
 
 .fback a {
     color: var(--text-muted);
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
     text-decoration: none;
+    display: inline-block;
 }
 
 .fback a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    background: rgba(251, 191, 36, 0.08);
+}
+
+/* --- Animated Background Layer (Aegis style) --- */
+.bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.bg-noise {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.bg-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: soft-light;
+    background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px);
+    background-size: 2rem 2rem;
+}
+
+/* Ensure page content sits above the background */
+header, section, footer, .fback {
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        width: 95%;
+        padding: 0.5rem 1.2rem;
+        top: 10px;
+        margin: 10px auto 0 auto;
+    }
+    
+    .navlinks {
+        margin: 0 10px;
+        font-size: 0.95rem;
+    }
+
+    #logo {
+        height: 42px;
+        width: 42px;
+    }
+
+    #navcontact {
+        padding: 8px 16px;
+        font-size: 0.88rem;
+        margin-left: 8px;
+    }
+
+    footer {
+        width: 88%;
+        font-size: 0.88rem;
+        padding: 10px 24px;
+    }
+}
+
+@media (max-width: 580px) {
+    header {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .navlinks {
+        margin: 0 6px;
+        font-size: 0.85rem;
+    }
+    
+    #navcontact {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        margin-left: 4px;
+    }
 }
